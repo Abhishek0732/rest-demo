@@ -17,6 +17,8 @@ services:
       retries: 10
     networks:
       - my-network
+    volumes:
+        - mysql-data:/var/lib/mysql
 
   app:
     build: .
@@ -31,3 +33,6 @@ services:
 networks:
   my-network:
     driver: bridge
+
+volumes:
+  mysql-data:
