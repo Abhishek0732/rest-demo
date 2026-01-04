@@ -1,13 +1,6 @@
 version: "3.8"
 
 services:
-  app:
-    build: .
-    ports:
-      - "8080:8080"
-    networks:
-      - my-network
-
   mysql:
     image: mysql:latest
     environment:
@@ -17,6 +10,13 @@ services:
       MYSQL_PASSWORD: 123456
     ports:
       - "3306:3306"
+    networks:
+      - my-network
+
+  app:
+    build: .
+    ports:
+      - "8080:8080"
     networks:
       - my-network
 
