@@ -25,4 +25,11 @@ public class StudentController {
         studentRepo.save(student);
         return "Student added: " + student.toString();
     }
+
+    @RequestMapping("/deleteStudent")
+    public String deleteStudent() {
+        int studentId = 1;
+        studentRepo.deleteById(studentId);
+        return "Student with ID " + studentId + " deleted.";
+    }
 }
